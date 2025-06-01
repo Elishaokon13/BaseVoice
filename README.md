@@ -21,8 +21,40 @@ BaseVoice is a decentralized feedback platform built on the Base network that al
 - **Backend**: Next.js API Routes
 - **Database**: MongoDB
 - **Blockchain**: Base Network
+- **Smart Contract**: Solidity with Foundry
 - **Encryption**: CryptoJS (AES)
 - **Authentication**: Wallet Connect
+
+## Smart Contract Setup
+
+The project includes a Foundry-based smart contract for handling feedback payments. To work with the smart contract:
+
+1. Navigate to the smart contract directory:
+   ```bash
+   cd foundry-app
+   ```
+
+2. Install Foundry dependencies:
+   ```bash
+   forge install
+   ```
+
+3. Build the contract:
+   ```bash
+   forge build
+   ```
+
+4. Run tests:
+   ```bash
+   forge test
+   ```
+
+5. Deploy to Base network:
+   ```bash
+   forge script script/FeedbackPayment.s.sol:DeployScript --rpc-url <base_rpc_url> --private-key <your_private_key>
+   ```
+
+   Note: The contract requires a minimum payment of 0.0003935 ETH for feedback submission.
 
 ## Getting Started
 
