@@ -92,3 +92,7 @@ To prevent spam, users must wait 5 minutes between feedback submissions from the
 - Wallet addresses are stored for rate limiting but not publicly displayed
 - Smart contract integration ensures proper payment verification
 
+## Credits
+
+Inspired by [@awesamarth_](https://x.com/awesamarth_)
+
