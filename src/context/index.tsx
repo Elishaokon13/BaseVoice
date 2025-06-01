@@ -19,7 +19,7 @@ if (!projectId) {
 const metadata = {
   name: 'basevoice',
   description: 'Anonymous Feedback for Base',
-  url: 'https://basevoice.vercel.app',
+  url: 'https://base-voice.vercel.app',
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
