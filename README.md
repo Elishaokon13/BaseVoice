@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BaseVoice
+
+BaseVoice is a decentralized feedback platform built on the Base network that allows users to submit encrypted feedback while maintaining their privacy through end-to-end encryption.
+
+## Features
+
+- **End-to-End Encryption**: All feedback is encrypted using AES encryption before being stored
+- **Blockchain Integration**: Built on the Base network with wallet connectivity
+- **Privacy-First**: User feedback is securely encrypted and cannot be read without proper authorization
+- **Category-Based Feedback**: Submit feedback in various categories:
+  - Speed & Performance
+  - Ease of Use
+  - Ideas & Requests
+  - Community Support
+  - Developer Experience
+  - Other
+
+## Technical Stack
+
+- **Frontend**: Next.js 14+ with TypeScript
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB
+- **Blockchain**: Base Network
+- **Encryption**: CryptoJS (AES)
+- **Authentication**: Wallet Connect
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables in `.env.local`:
+   ```
+   PASSWORD=your_encryption_password
+   MONGODB_URI=your_mongodb_connection_string
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) with your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Usage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Connect your wallet (must be on Base network)
+2. Select a feedback category
+3. Write your feedback (max 1000 characters)
+4. Submit feedback (requires a small transaction fee)
+5. Your feedback will be encrypted and stored securely
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rate Limiting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To prevent spam, users must wait 5 minutes between feedback submissions from the same wallet address.
 
-## Learn More
+## Security
 
-To learn more about Next.js, take a look at the following resources:
+- All feedback is encrypted using AES encryption before storage
+- Wallet addresses are stored for rate limiting but not publicly displayed
+- Smart contract integration ensures proper payment verification
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
