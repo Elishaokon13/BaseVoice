@@ -48,3 +48,4 @@ logs
 
 auto-commit.sh
 run.sh
+.env.local
