@@ -12,7 +12,6 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { foundry } from 'viem/chains';
 import { FEEDBACK_PAYMENT_ABI, FEEDBACK_PAYMENT_ADDRESSES } from '@/constants';
 import { parseEther } from 'viem';
-import { useMiniKit } from '@coinbase/onchainkit/minikit';
 
 interface FeedbackItem {
   _id: string;
@@ -61,12 +60,6 @@ const categories = [
 ];
 
 export default function HomePage() {
-  const { setFrameReady, isFrameReady } = useMiniKit();
-  useEffect(() => {
-    if (isFrameReady) {
-      setFrameReady();
-    }
-  }, [isFrameReady, setFrameReady]);
   const { address, isConnected } = useAccount();
   const chainId = useChainId();
   const [selectedCategory, setSelectedCategory] = useState('');
