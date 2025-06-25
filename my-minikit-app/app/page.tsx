@@ -23,6 +23,7 @@ import { Button } from "./components/DemoComponents";
 import { Icon } from "./components/DemoComponents";
 import { Home } from "./components/DemoComponents";
 import { Features } from "./components/DemoComponents";
+import FeedbackForm from './components/FeedbackForm';
 
 export default function App() {
   const { setFrameReady, isFrameReady, context } = useMiniKit();
@@ -39,8 +40,11 @@ export default function App() {
   }, [setFrameReady, isFrameReady]);
 
   const handleAddFrame = useCallback(async () => {
-    const frameAdded = await addFrame();
-    setFrameAdded(Boolean(frameAdded));
+    const result = await addFrame();
+    if (result) {
+      console.log('Frame added:', result.url, result.token);
+      setFrameAdded(true);
+    }
   }, [addFrame]);
 
   const saveFrameButton = useMemo(() => {
